@@ -25,6 +25,12 @@
     [self loadData];
     self.tableView.tableHeaderView = self.searchController.searchBar;
     [self.view addSubview:self.tableView];
+    
+    UIButton *backBtn = [[UIButton alloc]initWithFrame:CGRectMake(20, 10, 50, 20)];
+    [backBtn setTitle:@"返回" forState:UIControlStateNormal];
+    [backBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    UIBarButtonItem *item = [[UIBarButtonItem alloc]initWithCustomView:backBtn];
+    self.navigationController.navigationItem.backBarButtonItem = item;
 }
 
 - (void)loadData{

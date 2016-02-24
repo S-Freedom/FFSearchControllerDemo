@@ -23,9 +23,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"FFSearchDisplayController(DEPRECATED)";
-
+    [self loadData];
     self.tableView.tableHeaderView = self.searchBar;
     [self.view addSubview:self.tableView];
+    
+    UIButton *backBtn = [[UIButton alloc]initWithFrame:CGRectMake(20, 10, 50, 20)];
+    [backBtn setTitle:@"返回" forState:UIControlStateNormal];
+    [backBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    UIBarButtonItem *item = [[UIBarButtonItem alloc]initWithCustomView:backBtn];
+    self.navigationController.navigationItem.backBarButtonItem = item;
 }
 
 - (void)loadData{
@@ -61,17 +67,14 @@
 
 #pragma mark --UISearchBarDelegate
 - (BOOL)searchBarShouldBeginEditing:(UISearchBar *)searchBar{
-    NSLog(@"%s",__func__);
     return YES;
 }
 
 - (BOOL)searchBarShouldEndEditing:(UISearchBar *)searchBar{
-    NSLog(@"%s",__func__);
     return  YES;
 }
 
 - (BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(nullable NSString *)searchString NS_DEPRECATED_IOS(3_0,8_0){
-    NSLog(@"%s",__func__);
      NSString *searchStr = self.searchDisplayController.searchBar.text;
     if(searchStr.length > 0){
         NSPredicate *predicate = [NSPredicate predicateWithFormat:@"self contains [cd] %@",searchStr];
