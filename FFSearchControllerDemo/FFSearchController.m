@@ -22,12 +22,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"FFSearchController";
+    [self loadData];
+    self.tableView.tableHeaderView = self.searchController.searchBar;
+    [self.view addSubview:self.tableView];
+}
+
+- (void)loadData{
     for (int i=0; i<100; i++) {
         [self.dataList addObject:[NSString stringWithFormat:@"我是-%i",i]];
     }
-    
-    self.tableView.tableHeaderView = self.searchController.searchBar;
-    [self.view addSubview:self.tableView];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
