@@ -31,7 +31,7 @@
     [backBtn setTitle:@"返回" forState:UIControlStateNormal];
     [backBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     UIBarButtonItem *item = [[UIBarButtonItem alloc]initWithCustomView:backBtn];
-    self.navigationController.navigationItem.backBarButtonItem = item;
+    self.navigationItem.backBarButtonItem = item;
 }
 
 - (void)loadData{
