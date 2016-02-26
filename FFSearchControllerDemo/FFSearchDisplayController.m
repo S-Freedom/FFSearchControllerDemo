@@ -12,7 +12,7 @@
 
 @interface FFSearchDisplayController () <UITableViewDelegate,UITableViewDataSource,UISearchBarDelegate,UISearchDisplayDelegate>
 @property (strong,nonatomic) UITableView *tableView;
-@property (strong,nonatomic) UISearchDisplayController *searchDisplayController;
+@property (strong,nonatomic) UISearchDisplayController *searchDisplayController; 
 @property (strong,nonatomic) UISearchBar *searchBar;
 @property (strong,nonatomic) NSMutableArray *dataList;
 @property (strong,nonatomic) NSMutableArray *searchList;
